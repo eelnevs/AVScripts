@@ -1,0 +1,27 @@
+<html>
+<head>
+ 	<style type="text/css">
+   		body {background-color: #9da1b1}
+ 	</style>
+</head>
+<body>
+	<h3>Hymn Numbers</h3>
+	<label for="English"><strong>English</label></strong>
+	<input id="English">
+	<script>
+		Hymn("123") 
+	</script>
+	<br><br>
+	<input type="checkbox" for="Spanish">
+	<label for="Spanish"><strong>Spanish</label></strong>
+	<input id="Spanish" :value="getHymn()">
+</body>
+</html>
+<script type="text/javascript">
+	function Hymn(number) {
+		window.localStorage.setItem("hymn", number)
+	}
+	function getHymn() {
+		return window.localStorage.getItem("hymn")
+	}
+</script>
