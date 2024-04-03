@@ -1,0 +1,30 @@
+body {
+  background-color: #c7cbdd;
+}
+
+fieldset {
+  width: fit-content;
+  margin: 10px;
+  border-radius: 5px;
+  border-color: rgb(255, 163, 163);
+}
+
+input {
+  width: 100px;
+}
+
+input::placeholder {
+  font-size: 75%;
+  font-style: italic;
+  color: red;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button {
+  margin: 5px;
+}
