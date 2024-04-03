@@ -107,7 +107,7 @@ document.getElementById("toggle").addEventListener('click', () => {
     setShowSP(showSP);
 });
 
-document.getElementById("reset").addEventListener('click', () => {
+document.getElementById("clear").addEventListener('click', () => {
     setHymn('','')
     engInput.value = '';
     spInput.value = '';
