@@ -111,6 +111,8 @@ document.getElementById("reset").addEventListener('click', () => {
     setHymn('','')
     engInput.value = '';
     spInput.value = '';
+    engInput['placeholder'] = '';
+    spInput['placeholder'] = '';
 })
 
 // on load
