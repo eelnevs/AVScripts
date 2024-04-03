@@ -2,7 +2,9 @@
 <html>
 
 <body>
-	<h1 class="hymn-num" id="hymn"></h1>
+	<div class="hymn-div">
+		<h1 class="hymn-num" id="hymn"></h1>
+	</div>
 	<script>
 		const hymn = document.getElementById("hymn");
 		window.addEventListener("storage", () => {
@@ -24,11 +26,19 @@
 </html>
 
 <style>
+	body {
+		background-color: blue;
+		margin: 0px;
+	}
 	.hymn-num {
 		width: fit-content;
 		white-space: nowrap;
 		margin: 0 auto;
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 200px;
+	}
+	.hymn-div {
+		height: fit-content;
+		background-color: rgba(255, 255, 255, 0.6);
 	}
 </style>
