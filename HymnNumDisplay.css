@@ -10,7 +10,10 @@ fieldset {
 }
 
 input {
-  width: 100px;
+  width: 120px;
+  height: 20px;
+  font-size: large;
+  padding-top: 3px;
 }
 
 input::placeholder {
@@ -26,5 +29,5 @@ input::-webkit-inner-spin-button {
 }
 
 button {
-  margin: 5px;
+  margin: 4px;
 }

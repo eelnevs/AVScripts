@@ -64,6 +64,7 @@ function setHymn(eng, sp) {
 
 function setShowSP(showSP) {
     localStorage.setItem("showSP", showSP);
+    document.getElementById("sp-div").hidden = !showSP;
 }
 
 function validate(event, max) {
