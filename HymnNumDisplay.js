@@ -32,8 +32,8 @@ var HymnDictionary = {
     1260:386, 1265:387, 1273:388, 1275:389, 1287:404, 1293:419, 1295:420, 1299:432, 1302:446, 1311:447, 1315:448, 1319:449, 1325:459, 1327:492, 
     1331:493, 1333:494, 1335:495, 1337:496, 1339:497, 1341:498, 1345:499, 1349:421, 1350:164, 1351:422, 1352:261, 1354:437, 1355:140, 1357:163, 1359:192, 1360:128,
 }
-
-var showSP = false;
+let now = new Date().getHours();
+var showSP = now >= 10 && now < 13 ? false : true;
 const engInput = document.getElementById("hymn-eng");
 const spInput = document.getElementById("hymn-sp");
 
