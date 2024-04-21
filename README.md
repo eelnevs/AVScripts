@@ -11,10 +11,10 @@ This is for keeping AV related scripts.
 - Use HymnNum.html to display in OBS source.
 - Configure: use "http://absolute/" for custom browser docks setup instead of "file:///"
 - Usage: 
-    -- Add "HymnNumDisplay.html" to OBS custom browser dock
-	-- Add "HymnNum.html" as a broswer source in a OBS scene
-	-- When number is typed inside one of the input boxes in "HymnNumDisplay.html", it fetches the corresponding English or Spanish hymn number and stores them in localStorage.
-	-- When localStorage changes, it updates the hymn text in "HymnNum.html".
+	- Add "HymnNumDisplay.html" to OBS custom browser dock
+	- Add "HymnNum.html" as a broswer source in a OBS scene
+	- When number is typed inside one of the input boxes in "HymnNumDisplay.html", it fetches the corresponding English or Spanish hymn number and stores them in localStorage.
+	- When localStorage changes, it updates the hymn text in "HymnNum.html".
 
 ## Hymn-num-converter.lua (Not used)
 - A lua script for OBS to auto convert hymn number entered from English to Spanish or vice versa, and display in the text box overlaying the video.
