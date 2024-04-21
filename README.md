@@ -7,8 +7,12 @@ This is for keeping AV related scripts.
 
 ## HymnNumDisplay.html
 - A new attempt to do the hymn number conversion using web browser docks. It uses localstorage for setting and getting hymn numbers.
-- HymnNumDisplay.js and HymnNumDisplay.css
-- Use HymnNum.html to display in OBS source.
+	### HymnNumDisplay.js
+	- functions for HymnNumDisplay
+	### HymnNumDisplay.css
+	- styles for HymnNumDisplay
+	### HymnNum.html
+	- Hymn text to be shown on video/TV
 - Configure: use "http://absolute/" for custom browser docks setup instead of "file:///"
 - Usage: 
 	- Add "HymnNumDisplay.html" to OBS custom browser dock
