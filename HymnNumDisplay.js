@@ -33,7 +33,7 @@ var HymnDictionary = {
     1331:493, 1333:494, 1335:495, 1337:496, 1339:497, 1341:498, 1345:499, 1349:421, 1350:164, 1351:422, 1352:261, 1354:437, 1355:140, 1357:163, 1359:192, 1360:128,
 }
 let now = new Date().getHours();
-var showSP = now >= 10 && now < 13 ? false : true;
+var showSP = now < 10 || now > 13;
 const engInput = document.getElementById("hymn-eng");
 const spInput = document.getElementById("hymn-sp");
 
