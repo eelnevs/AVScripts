@@ -13,6 +13,7 @@ This is for keeping AV related scripts.
 	- styles for HymnNumDisplay
 	### HymnNum.html
 	- Hymn text to be shown on video/TV
+
 - Configure: use "http://absolute/" for custom browser docks setup instead of "file:///"
 - Usage: 
 	- Add "HymnNumDisplay.html" to OBS custom browser dock
