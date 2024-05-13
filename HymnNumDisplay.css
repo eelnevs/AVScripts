@@ -4,7 +4,7 @@ body {
 
 fieldset {
   width: fit-content;
-  margin: 10px;
+  margin: 8px;
   border-radius: 5px;
   border-color: rgb(255, 163, 163);
 }
@@ -20,6 +20,17 @@ input::placeholder {
   font-size: 75%;
   font-style: italic;
   color: red;
+}
+
+#custom-text {
+  width: 140px;
+  font-size: small;
+}
+
+#custom-text::placeholder {
+  font-size: x-small;
+  color: gray;
+  font-style: normal;
 }
 
 input::-webkit-outer-spin-button,
