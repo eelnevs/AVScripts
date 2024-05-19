@@ -9,13 +9,14 @@
 			let hymns = JSON.parse(localStorage.getItem("hymn"));
 			let showSP = localStorage.getItem("showSP");
 			hymn.style['font-size'] = '220px';
+			hymn.style['padding-bottom'] = '25px';
 			if (hymns.text != undefined) {
 				if (hymns.text.length > 15) hymn.style['font-size'] = '180px';
 				hymn.innerHTML = hymns.text;
 			}
 			else if (hymns.E == "" || hymns.S == "") {
 				hymn.textContent = "";
-				hymn.style['height'] = 'auto';
+				hymn.style['padding-bottom'] = '0px';
 			}
 			else if (showSP == "true") {
 				hymn.textContent = `Hymn E${hymns.E} S${hymns.S}`;
