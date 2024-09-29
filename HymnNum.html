@@ -7,22 +7,27 @@
 		const hymn = document.getElementById("hymn");
 		window.addEventListener("storage", () => {
 			let hymns = JSON.parse(localStorage.getItem("hymn"));
-			let showSP = localStorage.getItem("showSP");
+			let showSP = JSON.parse(localStorage.getItem("showSP"));
+			let showRU = JSON.parse(localStorage.getItem("showRU"));
 			hymn.style['font-size'] = '220px';
 			hymn.style['padding-bottom'] = '25px';
+			console.log(hymns);
+			console.log(showSP, showRU)
 			if (hymns.text != undefined) {
 				if (hymns.text.length > 15) hymn.style['font-size'] = '180px';
 				hymn.innerHTML = hymns.text;
 			}
-			else if (hymns.E == "" || hymns.S == "") {
+			else if (hymns.E == "" || hymns.S == "" || hymns.R == "") {
 				hymn.textContent = "";
 				hymn.style['padding-bottom'] = '0px';
 			}
-			else if (showSP == "true") {
-				hymn.textContent = `Hymn E${hymns.E} S${hymns.S}`;
-			}
 			else {
-				hymn.textContent = `Hymn ${hymns.E}`;
+				console.log("Hi")
+				let sp = showSP ? ` S${hymns.S}` : "";
+				let ru = showRU ? ` R${hymns.R}` : "";
+				let eng = (showSP && showRU) ? `E${hymns.E}` : (showSP || showRU) ? `Hymn E${hymns.E}` : `Hymn ${hymns.E}`;
+				console.log(sp, ru, eng);
+				hymn.textContent = eng + sp + ru;
 			}
 		})
 	</script>
