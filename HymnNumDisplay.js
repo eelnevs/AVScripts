@@ -1,5 +1,5 @@
 let now = new Date().getHours();
-var showSP = now < 10 || now > 13;
+var showSP = true;
 var showRU = true;
 const engInput = document.getElementById("hymn-eng");
 const spInput = document.getElementById("hymn-sp");
