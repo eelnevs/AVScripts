@@ -1,14 +1,16 @@
 # AVScripts
 
-This is for keeping AV related scripts.
+This is for keeping AV related scripts used in OBS for our church meetings.
+- Using custom browser dock to update Hymn number displayed on the video, which is displayed on TV and used for broadcasting.
 
-## AV CHeck List.html
+## AV Check List.html
 - A checklist for AV service
 
 ## HymnNumDisplay.html
-- A new attempt to do the hymn number conversion using web browser docks. It uses localstorage for setting and getting hymn numbers.
+- Hymn number conversion using web browser docks. It uses localStorage for setting and getting hymn numbers.
 	### HymnNumDisplay.js
 	- functions for HymnNumDisplay
+   	- supports Spanish and Russian hymn number conversions.
 	### HymnNumDisplay.css
 	- styles for HymnNumDisplay
 	### HymnNum.html
@@ -21,7 +23,7 @@ This is for keeping AV related scripts.
 	- When number is typed inside one of the input boxes in "HymnNumDisplay.html", it fetches the corresponding English or Spanish hymn number and stores them in localStorage.
 	- When localStorage changes, it updates the hymn text in "HymnNum.html".
 
-## Hymn-num-converter.lua (Not used)
+## Hymn-num-converter.lua (deprecated)
 - A lua script for OBS to auto convert hymn number entered from English to Spanish or vice versa, and display in the text box overlaying the video.
 - It interacts with the text box inside a scene.
 - Not as good as using HymnNumDisplay.html
