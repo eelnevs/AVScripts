@@ -1,3 +1,4 @@
+// {English#: Spanish#}
 const HymnDictionary = {
   1: 1,
   5: 2,
@@ -491,6 +492,7 @@ const HymnDictionary = {
   1360: 128,
 };
 
+//{English#: Russian#}
 const HymnDictionaryR = {
   1: 1,
   5: 2,
