@@ -1,5 +1,5 @@
 // {English#: Spanish#}
-const HymnDictionary = {
+const HymnDictionaryOldSp = {
   1: 1,
   5: 2,
   7: 3,
