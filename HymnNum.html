@@ -8,26 +8,68 @@
 		window.addEventListener("storage", () => {
 			let hymns = JSON.parse(localStorage.getItem("hymn"));
 			let showSP = JSON.parse(localStorage.getItem("showSP"));
+			let showOldSP = JSON.parse(localStorage.getItem("showOldSP"));
 			let showRU = JSON.parse(localStorage.getItem("showRU"));
 			hymn.style['font-size'] = '220px';
 			hymn.style['padding-bottom'] = '25px';
-			console.log(hymns);
-			console.log(showSP, showRU)
+			// custom text display
 			if (hymns.text != undefined) {
 				if (hymns.text.length > 15) hymn.style['font-size'] = '180px';
 				hymn.innerHTML = hymns.text;
 			}
-			else if (hymns.E == "" || hymns.S == "" || hymns.R == "") {
+			// clear display
+			else if (!hymns.E || !hymns.S || !hymns.R) {
 				hymn.textContent = "";
 				hymn.style['padding-bottom'] = '0px';
 			}
+			// display hymn numbers using converter
 			else {
-				console.log("Hi")
-				let sp = showSP ? ` S${hymns.S}` : "";
-				let ru = showRU ? ` R${hymns.R}` : "";
-				let eng = (showSP && showRU) ? `E${hymns.E}` : (showSP || showRU) ? `Hymn E${hymns.E}` : `Hymn ${hymns.E}`;
-				console.log(sp, ru, eng);
-				hymn.textContent = eng + sp + ru;
+				let hymnHTML = document.createElement("div");
+				hymnHTML.style.display = "flex";
+				hymnHTML.style.justifyContent = "center";
+				hymnHTML.style.alignItems = "center";
+				let eng = document.createElement("div");
+				eng.textContent = (showSP && showRU) ? `E${hymns.E}` : (showSP || showRU) ? `Hymn E${hymns.E}` : `Hymn ${hymns.E}`;
+				hymnHTML.appendChild(eng);
+				if (showSP) {
+					let sp = document.createElement("div");
+					sp.appendChild(document.createTextNode(" S"));
+					sp.style.marginLeft = "50px";
+					let spNum = document.createElement("div");
+					spNum.style.display = "flex";
+					spNum.style.flexDirection = "column";
+					if (showOldSP && (hymns.S != "-" || hymns.OS != "-")) {
+						spNum.style.marginLeft = "10px";
+						hymnHTML.style.paddingTop = "0.1em";
+						spNum.style.alignItems = "center";
+						let newSP = document.createElement("div");
+						newSP.textContent = `${hymns.S}N`
+						newSP.style.display = "block";
+						newSP.style.fontSize = "0.6em";
+						newSP.style.textAlign = hymns.S == "-" ? "center" : "left";
+						newSP.style.width = "100%";
+						spNum.appendChild(newSP);
+						let oldSP = document.createElement("div");
+						oldSP.textContent = `${hymns.OS} `;
+						oldSP.style.display = "block";
+						oldSP.style.fontSize = "0.6em";
+						oldSP.style.lineHeight = "0.75em";
+						oldSP.style.textAlign = hymns.OS == "-" ? "center" : "left";
+						oldSP.style.width = "100%";
+						spNum.appendChild(oldSP);
+					} else {
+						spNum.appendChild(document.createTextNode(hymns.S));
+					}
+					hymnHTML.appendChild(sp);
+					hymnHTML.appendChild(spNum);
+				}
+				if (showRU) {
+					let ru = document.createElement("div");
+					ru.appendChild(document.createTextNode(` R${hymns.R}`));
+					ru.style.marginLeft = "50px";
+					hymnHTML.appendChild(ru);
+				}
+				hymn.innerHTML = hymnHTML.outerHTML;
 			}
 		})
 	</script>
