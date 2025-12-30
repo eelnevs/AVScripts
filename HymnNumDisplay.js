@@ -1,7 +1,7 @@
 // default values
-var showSP = true;
-var showOldSP = false;
-var showRU = true;
+var showSP = JSON.parse(localStorage.getItem("showSP")) ?? true;
+var showOldSP = JSON.parse(localStorage.getItem("showOldSP")) ?? false;
+var showRU = JSON.parse(localStorage.getItem("showRU")) ?? true;
 // text inputs
 const engInput = document.getElementById("hymn-eng");
 const spInput = document.getElementById("hymn-sp");
