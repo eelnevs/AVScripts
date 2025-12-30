@@ -52,6 +52,15 @@ fieldset {
   min-width: 142px;
 }
 
+fieldset[disabled] input {
+  cursor: not-allowed;
+}
+
+fieldset[disabled] i {
+  color: #494a51;
+  cursor: not-allowed;
+}
+
 .input-icon-field {
   position: relative;
   width: fit-content;
@@ -97,7 +106,7 @@ fieldset {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #9a9a9a;
   -webkit-transition: .4s;
   transition: .4s;
 }
