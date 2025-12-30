@@ -160,9 +160,9 @@ document.getElementById("switch-ru").addEventListener("click", () => {
 });
 
 document.getElementById("old-sp-checkbox").addEventListener("click", () => {
-    showOldSP = document.getElementById("old-sp-checkbox").checked;
-    setShowOldSP();
-})
+	showOldSP = document.getElementById("old-sp-checkbox").checked;
+	setShowOldSP();
+});
 
 var clearBtns = document.getElementsByClassName("clear-btn");
 for (let btn of clearBtns) {
