@@ -4,28 +4,54 @@
 <head>
 	<title>Hymn Number Converter</title>
 	<link rel="stylesheet" href="HymnNumDisplay.css">
+	<script src="https://kit.fontawesome.com/b605949882.js" crossorigin="anonymous"></script>
 	<script src="hymnsDict.js"></script>
 </head>
 
 <body>
-	<fieldset>
-		<legend>English</legend>
-		<input id="hymn-eng" type="number" min="0" max="1360">
+	<fieldset class="eng">
+		<i class="fa-solid fa-e"></i>
+		<span class="input-icon-field">
+			<input id="hymn-eng" type="number" min="0" max="1360">
+			<i class="fa-regular fa-circle-xmark clear-btn" title="clear"></i>
+		</span>
 	</fieldset>
 	<fieldset id="sp-div">
-		<legend>Spanish</legend>
-		<input id="hymn-sp" type="number" min="0" max="500">
+		<legend>
+			<label id="switch-sp" class="switch">
+				<input id="toggle-sp" type="checkbox">
+				<span class="slider round"></span>
+			</label>
+		</legend>
+		<i class="fa-solid fa-s"></i>
+		<span class="input-icon-field">
+			<input id="hymn-sp" type="number" min="0" max="910">
+			<i class="fa-regular fa-circle-xmark clear-btn" title="clear"></i>
+		</span>
+		<div id="old-sp-label">
+			Show old SP
+			<input id="old-sp-checkbox" type="checkbox">
+		</div>
 	</fieldset>
 	<fieldset id="ru-div">
-		<legend>Russian</legend>
-		<input id="hymn-ru" type="number" min="0" max="800">
+		<legend>
+			<label id="switch-ru" class="switch">
+				<input id="toggle-ru" type="checkbox">
+				<span class="slider round"></span>
+			</label>
+		</legend>
+		<i class="fa-solid fa-r"></i>
+		<span class="input-icon-field">
+			<input id="hymn-ru" type="number" min="0" max="800">
+			<i class="fa-regular fa-circle-xmark clear-btn" title="clear"></i>
+		</span>
 	</fieldset>
-	<button id="toggle">Toggle Spanish</button>
-	<button id="toggleR">Toggle Russian</button>
-	<button id="clear">Clear</button>
 	<fieldset title="Type <br> for line-break">
 		<legend>Custom Text</legend>
-		<input id="custom-text" type="text" placeholder="Press enter to show text" >
+		<span class="input-icon-field">
+			<input id="custom-text" type="text" placeholder="Press enter to show text">
+			<i class="fa-regular fa-circle-xmark clear-btn" title="clear"></i>
+		</span>
 	</fieldset>
 </body>
 

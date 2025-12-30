@@ -8,26 +8,55 @@
 		window.addEventListener("storage", () => {
 			let hymns = JSON.parse(localStorage.getItem("hymn"));
 			let showSP = JSON.parse(localStorage.getItem("showSP"));
+			let showOldSP = JSON.parse(localStorage.getItem("showOldSP"));
 			let showRU = JSON.parse(localStorage.getItem("showRU"));
 			hymn.style['font-size'] = '220px';
 			hymn.style['padding-bottom'] = '25px';
-			console.log(hymns);
-			console.log(showSP, showRU)
+			// custom text display
 			if (hymns.text != undefined) {
 				if (hymns.text.length > 15) hymn.style['font-size'] = '180px';
 				hymn.innerHTML = hymns.text;
 			}
-			else if (hymns.E == "" || hymns.S == "" || hymns.R == "") {
+			// clear display
+			else if (!hymns.E || !hymns.S || !hymns.R) {
 				hymn.textContent = "";
 				hymn.style['padding-bottom'] = '0px';
 			}
+			// display hymn numbers using converter
 			else {
-				console.log("Hi")
-				let sp = showSP ? ` S${hymns.S}` : "";
-				let ru = showRU ? ` R${hymns.R}` : "";
-				let eng = (showSP && showRU) ? `E${hymns.E}` : (showSP || showRU) ? `Hymn E${hymns.E}` : `Hymn ${hymns.E}`;
-				console.log(sp, ru, eng);
-				hymn.textContent = eng + sp + ru;
+				let hymnHTML = document.createElement("div");
+				let eng = document.createElement("span");
+				eng.textContent = (showSP && showRU) ? `E${hymns.E}` : (showSP || showRU) ? `Hymn E${hymns.E}` : `Hymn ${hymns.E}`;
+				hymnHTML.appendChild(eng);
+				if (showSP) {
+					let sp = document.createElement("span");
+					sp.appendChild(document.createTextNode(" S"));
+					let spNum = document.createElement("span");
+					spNum.style.display = "inline-block";
+					if (showOldSP && (hymns.S != "-" || hymns.OS != "-")) {
+						spNum.style.verticalAlign = "middle";
+						let newSP = document.createElement("span");
+						newSP.textContent = `${hymns.S}N`
+						newSP.style.display = "block";
+						newSP.style.fontSize = "0.6em";
+						spNum.appendChild(newSP);
+						let oldSP = document.createElement("span");
+						oldSP.textContent = `${hymns.OS} `;
+						oldSP.style.display = "block";
+						oldSP.style.fontSize = "0.5em";
+						spNum.appendChild(oldSP);
+					} else {
+						spNum.appendChild(document.createTextNode(hymns.S));
+					}
+					sp.appendChild(spNum);
+					hymnHTML.appendChild(sp);
+				}
+				if (showRU) {
+					let ru = document.createElement("span");
+					ru.appendChild(document.createTextNode(` R${hymns.R}`));
+					hymnHTML.appendChild(ru);
+				}
+				hymn.innerHTML = hymnHTML.outerHTML;
 			}
 		})
 	</script>
