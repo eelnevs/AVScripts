@@ -8,13 +8,16 @@ This is for keeping AV related scripts used in OBS for our church meetings.
 
 ## HymnNumDisplay.html
 - Hymn number conversion using web browser docks. It uses localStorage for setting and getting hymn numbers.
+  	### hymnsDict.js
+  	- key:value dictionaries for hymn number conversions
+  	- use "key" for English, "val" for other languages (Spanish or Russian)
 	### HymnNumDisplay.js
 	- functions for HymnNumDisplay
    	- supports Spanish and Russian hymn number conversions.
 	### HymnNumDisplay.css
 	- styles for HymnNumDisplay
 	### HymnNum.html
-	- Hymn text to be shown on video/TV
+	- hymn text to be shown on video/TV
 
 - Configure: use "http://absolute/" for custom browser docks setup instead of "file:///"
 - Usage: 
