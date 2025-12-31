@@ -39,6 +39,10 @@ input::placeholder {
 	margin-top: 3px;
 }
 
+#old-sp-label input {
+	margin-left: 0;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
@@ -138,11 +142,29 @@ input:checked + .slider:before {
 	transform: translateX(1rem);
 }
 
-/* Rounded sliders */
 .slider.round {
 	border-radius: 1rem;
 }
 
 .slider.round:before {
 	border-radius: 50%;
+}
+
+.slider:after
+{
+ content:'O';
+ color: white;
+ display: block;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ top: 50%;
+ right: 10%;
+ font-size: x-small;
+ font-family: sans-serif;
+}
+
+input:checked + .slider:after
+{  
+  content:'I';
+  left: 50%
 }

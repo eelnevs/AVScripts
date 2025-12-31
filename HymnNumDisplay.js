@@ -94,11 +94,15 @@ engInput.addEventListener("keyup", (e) => {
 		let oldSp = HymnConverterOld(number);
 		let ru = HymnConverterR(number);
 		storeHymn(number, sp, ru, oldSp);
-		spInput.value = sp;
-		ruInput.value = ru;
 		customInput.value = "";
-		if (sp == "-") spInput["placeholder"] = "*No Spanish*";
-		if (ru == "-") ruInput["placeholder"] = "*No Russian*";
+		if (sp == "-") {
+			spInput.value = null;
+			spInput["placeholder"] = "*No Spanish*";
+		} else spInput.value = sp;
+		if (ru == "-") {
+			ruInput.value = null;
+			ruInput["placeholder"] = "*No Russian*";
+		} else ruInput.value = ru;
 		if (!sp) spInput["placeholder"] = "";
 		if (!ru) ruInput["placeholder"] = "";
 	}
@@ -111,13 +115,17 @@ spInput.addEventListener("keyup", (e) => {
 		let oldSp = HymnConverterOld(eng);
 		let ru = HymnConverter(eng);
 		storeHymn(eng, number, ru, oldSp);
-		engInput.value = eng;
-		ruInput.value = ru;
 		customInput.value = "";
 		showSP = true;
 		setShowSP();
-		if (eng == "-") engInput["placeholder"] = "*No English*";
-		if (ru == "-") ruInput["placeholder"] = "*No Russian*";
+		if (eng == "-") {
+			engInput.value = null;
+			engInput["placeholder"] = "*No English*";
+		} else engInput.value = eng;
+		if (ru == "-") {
+			ruInput.value = null;
+			ruInput["placeholder"] = "*No Russian*";
+		} else ruInput.value = ru;
 		if (!eng) engInput["placeholder"] = "";
 		if (!ru) ruInput["placeholder"] = "";
 	}
@@ -130,15 +138,19 @@ ruInput.addEventListener("keyup", (e) => {
 		let oldSp = HymnConverterOld(eng);
 		let sp = HymnConverter(eng);
 		storeHymn(eng, sp, number, oldSp);
-		engInput.value = eng;
-		spInput.value = sp;
 		customInput.value = "";
 		showRU = true;
 		setShowRU();
-		if (eng == "-") engInput["placeholder"] = "*No English*";
-		if (sp == "-") spInput["placeholder"] = "*No Spanish*";
+		if (eng == "-") {
+			engInput.value = null;
+			engInput["placeholder"] = "*No English*";
+		} else engInput.value = eng;
+		if (sp == "-") {
+			spInput.value = null;
+			spInput["placeholder"] = "*No Spanish*";
+		} else spInput.value = sp;
 		if (!eng) engInput["placeholder"] = "";
-		if (!ru) ruInput["placeholder"] = "";
+		if (!sp) ruInput["placeholder"] = "";
 	}
 });
 
