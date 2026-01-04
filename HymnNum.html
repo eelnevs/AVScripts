@@ -31,10 +31,11 @@
 				let eng = document.createElement("div");
 				eng.textContent = (showSP && showRU) ? `E${hymns.E}` : (showSP || showRU) ? `Hymn E${hymns.E}` : `Hymn ${hymns.E}`;
 				hymnHTML.appendChild(eng);
+				let numberSpacing = 70;
 				if (showSP) {
 					let sp = document.createElement("div");
 					sp.appendChild(document.createTextNode(" S"));
-					sp.style.marginLeft = "50px";
+					sp.style.marginLeft = `${numberSpacing}px`;
 					let spNum = document.createElement("div");
 					spNum.style.display = "flex";
 					spNum.style.flexDirection = "column";
@@ -66,7 +67,7 @@
 				if (showRU) {
 					let ru = document.createElement("div");
 					ru.appendChild(document.createTextNode(` R${hymns.R}`));
-					ru.style.marginLeft = "50px";
+					ru.style.marginLeft = `${numberSpacing}px`;
 					hymnHTML.appendChild(ru);
 				}
 				hymn.innerHTML = hymnHTML.outerHTML;
