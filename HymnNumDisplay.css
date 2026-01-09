@@ -15,6 +15,7 @@ input[type="number"] {
 	height: 20px;
 	font-size: large;
 	padding-top: 3px;
+	padding-left: 3px;
 }
 
 input::placeholder {
