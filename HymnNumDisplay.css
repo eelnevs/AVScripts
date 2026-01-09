@@ -78,7 +78,7 @@ fieldset[disabled] i {
 	color: rgb(243, 57, 57);
 	position: absolute;
 	right: 0.25rem;
-	top: 0;
+	top: 0.125rem;
 }
 
 .input-icon-field i:hover {
