@@ -13,12 +13,18 @@
 			hymn.style['font-size'] = '220px';
 			hymn.style['padding-bottom'] = '25px';
 			// custom text display
-			if (hymns.text?.trim()) {
-				if (hymns.text.length > 15) hymn.style['font-size'] = '180px';
-				hymn.innerHTML = hymns.text;
+			if (hymns.text != undefined) {
+				let custom = hymns.text.trim();
+				if (custom) {
+					if (custom.length > 15) hymn.style['font-size'] = '180px';
+					hymn.innerHTML = custom;
+				} else {
+					hymn.textContent = "";
+					hymn.style['padding-bottom'] = '0px';
+				}
 			}
 			// clear display
-			else if (!hymns.E || !hymns.S || !hymns.R || !hymns.text?.trim()) {
+			else if (!hymns.E || !hymns.S || !hymns.R) {
 				hymn.textContent = "";
 				hymn.style['padding-bottom'] = '0px';
 			}
