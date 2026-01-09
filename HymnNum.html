@@ -13,12 +13,12 @@
 			hymn.style['font-size'] = '220px';
 			hymn.style['padding-bottom'] = '25px';
 			// custom text display
-			if (hymns.text) {
+			if (hymns.text.trim()) {
 				if (hymns.text.length > 15) hymn.style['font-size'] = '180px';
 				hymn.innerHTML = hymns.text;
 			}
 			// clear display
-			else if (!hymns.E || !hymns.S || !hymns.R || !hymns.text) {
+			else if (!hymns.E || !hymns.S || !hymns.R || !hymns.text.trim()) {
 				hymn.textContent = "";
 				hymn.style['padding-bottom'] = '0px';
 			}
